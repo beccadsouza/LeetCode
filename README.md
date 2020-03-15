@@ -1,3 +1,4 @@
 # LeetCode
-Problem Number is package name
-Function signature is identical to LeetCode problem code signature
+#### Package name is set as [underscore][problem number]
+
+#### Function signature is identical to LeetCode problem code signature

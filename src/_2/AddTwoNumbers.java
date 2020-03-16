@@ -19,13 +19,9 @@ public class AddTwoNumbers {
 class ListNode {
      int val;
      ListNode next;
-     ListNode(int x) {
-         val = x;
-     }
+     ListNode(int x) { val = x; }
      public static ListNode makeList(int[] digits){
-         if(digits.length == 0){
-             return null;
-         }
+         if(digits.length == 0){ return null; }
          ListNode head = new ListNode(digits[0]);
          ListNode ptr = head;
          for(int i = 1; i <digits.length; i++){
@@ -36,9 +32,7 @@ class ListNode {
      }
 
      public static void displayList(ListNode l){
-         if(l==null){
-             return;
-         }
+         if(l==null){ return; }
          while(l.next!=null){
             System.out.print(l.val + "->");
             l = l.next;
@@ -67,9 +61,7 @@ class Solution {
             carry = sum/10;
             al.add(unit);
         }
-        if(carry!=0){
-            al.add(carry);
-        }
+        if(carry!=0){ al.add(carry); }
         ListNode head = new ListNode(0);
         ListNode ptr = head;
         for(int x: al){

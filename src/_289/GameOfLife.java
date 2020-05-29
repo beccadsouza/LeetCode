@@ -26,11 +26,11 @@ class Solution {
         int[] y = new int[]{-1,0,+1,-1,+1,-1,0,+1};
         for(int i = 0;i<board.length;i++)
             for(int j = 0;j<board[0].length;j++){
-                int live = 0, dead = 0;
+                int live = 0;
                 for(int k = 0;k<8;k++){
                     if(0<=(i+x[k]) && (i+x[k])<board.length){
                         if(0<=(j+y[k]) && (j+y[k])<board[0].length){
-                            if(board[i+x[k]][j+y[k]]%2==0) dead++;
+                            if(board[i+x[k]][j+y[k]]%2==0) ;
                             else live++;
                         }
                     }

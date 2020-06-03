@@ -19,39 +19,37 @@ class TreeNode{
     }
 }
 class Solution {
-    public boolean isLeaf(TreeNode node){
-        return node.left==null && node.right==null;
-    }
+    List<Integer> al = new ArrayList<>();
+
+    // Iterative Solution
     public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> al = new ArrayList<>();
-        Stack<TreeNode> stack = new Stack<>();
         if(root==null) return al;
+        Stack<TreeNode> stack = new Stack<>();
         stack.add(root);
-        boolean goLeft = true;
-        while(!stack.isEmpty()){
-            if(goLeft && stack.peek().left!=null){
-                if(isLeaf(stack.peek().left)){
-                    al.add(stack.peek().left.val);
-                    goLeft = false;
-                }
-                else {
-                    stack.push(stack.peek().left);
-                    continue;
-                }
-            }
-            al.add(stack.peek().val);
-            TreeNode curr = stack.pop();
-            if(curr.right!=null){
-                if(isLeaf(curr.right)){
-                    al.add(curr.right.val);
-                    goLeft = false;
-                }
-                else{
+        while(stack.size()>0){
+            while(stack.peek().left!=null) stack.push(stack.peek().left);
+            while(stack.size()>0){
+                TreeNode curr = stack.pop();
+                al.add(curr.val);
+                if(curr.right!=null){
                     stack.push(curr.right);
-                    goLeft = true;
+                    break;
                 }
             }
         }
         return al;
     }
+
+    // Recursive Solution
+    // public void function(TreeNode node){
+    //     if(node!=null){
+    //         function(node.left);
+    //         al.add(node.val);
+    //         function(node.right);
+    //     }
+    // }
+    // public List<Integer> inorderTraversal(TreeNode root) {
+    //     function(root);
+    //     return al;
+    // }
 }

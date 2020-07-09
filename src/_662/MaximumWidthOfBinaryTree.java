@@ -1,7 +1,6 @@
 package _662;
 
 import java.util.*;
-
 /*
  * Created by Rebecca Dsouza on 5/5/20
  */
@@ -22,7 +21,25 @@ class TreeNode {
         this.right = right;
     }
 }
-
+//class Solution {
+//    Map<Integer, Pair<Integer,Integer>> hm = new HashMap<>();
+//    int a = Integer.MAX_VALUE, b = Integer.MIN_VALUE, w = b;
+//    public void function(TreeNode node, int level, int id){
+//        if(node!=null){
+//            Pair pair = hm.getOrDefault(level, new Pair(a, b));
+//            int start = Math.min((Integer)pair.getKey(),id);
+//            int end = Math.max((Integer)pair.getValue(),id);
+//            hm.put(level, new Pair(start,end));
+//            function(node.left,level+1,2*id);
+//            function(node.right,level+1,2*id+1);
+//        }
+//    }
+//    public int widthOfBinaryTree(TreeNode root) {
+//        function(root, 0, 1);
+//        for(Pair x:hm.values()) w = Math.max(w,(Integer)x.getValue()-(Integer)x.getKey()+1);
+//        return w;
+//    }
+//}
 class Solution {
     public int widthOfBinaryTree(TreeNode root) {
         if(root==null) return 0;

@@ -9,7 +9,10 @@ import java.util.*;
 
 public class NumberOfWaysToStayInTheSamePlaceAfterSomeSteps {
     public static void main(String[] args){
-    
+        Solution sol = new Solution();
+        System.out.println(sol.numWays(3,2));
+        System.out.println(sol.numWays(2,4));
+        System.out.println(sol.numWays(4,2));
     }
 }
 class Pair<K, V> {
